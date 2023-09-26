@@ -7,13 +7,15 @@ function handlerSubmit(event) {
 
     const { email, password } = event.currentTarget.elements;
     
-    const data = {
-        email: email.value,
-        password:password.value
+    if (email.value === '' || password.value === '') {
+        alert('All fields must be filled');
+    } else {
+        const data = {
+            email: email.value,
+            password: password.value
+        };
+        console.log(data);
     }
-
-    console.log(data);
 
     event.currentTarget.reset();
 }
-
