@@ -7,13 +7,14 @@ function handlerInput(event) {
     const userInput = event.currentTarget.value.length;
 
     if (userInput === dataLength) {
-        userPass.classList.add('valid');
-        userPass.classList.remove('invalid');
+        updateStyleEl('valid', 'invalid')
     }
     else {
-        userPass.classList.add('invalid');
-        userPass.classList.remove('valid');
+       updateStyleEl('invalid', 'valid',)
     }
 }
 
-
+function updateStyleEl(a, b) {
+    userPass.classList.add(a);
+    userPass.classList.remove(b);
+}
