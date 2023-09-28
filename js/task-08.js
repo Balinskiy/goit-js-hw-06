@@ -8,14 +8,14 @@ function handlerSubmit(event) {
     const { email, password } = event.currentTarget.elements;
     
     if (email.value === '' || password.value === '') {
-        alert('All fields must be filled');
-    } else {
+        return alert('All fields must be filled');
+    } 
         const data = {
             email: email.value,
             password: password.value
         };
+    
         console.log(data);
-    }
 
     event.currentTarget.reset();
-}
+    }
